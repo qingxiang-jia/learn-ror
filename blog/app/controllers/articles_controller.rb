@@ -9,7 +9,12 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    @article.save
+    if @article.save
+      redirect_to @article # redirect_to?
+    else
+      render 'new' # why the @article object is passed back to the new template
+      # where is the 'new' template?
+    end
 
     redirect_to @article
   end
