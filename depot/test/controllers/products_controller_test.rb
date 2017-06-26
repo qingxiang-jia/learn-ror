@@ -12,7 +12,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    puts (get products_url)
+    get products_url
     assert_response :success
   end
 
